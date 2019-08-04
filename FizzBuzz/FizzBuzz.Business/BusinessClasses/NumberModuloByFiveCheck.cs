@@ -17,7 +17,13 @@ namespace FizzBuzz.Business.BusinessClasses
         }
         public string OutputString(int number)
         {
-            throw new NotImplementedException();
+            if (number % 5 == 0)
+            {
+                return _dateTimeProvider.GetNow().DayOfWeek == DayOfWeek.Wednesday ? "Wuzz" : "Buzz";
+
+            }
+
+            return string.Empty;
         }
     }
 }
