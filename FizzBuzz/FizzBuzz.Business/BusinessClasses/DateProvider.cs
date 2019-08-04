@@ -11,7 +11,7 @@ namespace FizzBuzz.Business.BusinessClasses
     {
         public DateTime GetNow()
         {
-            throw new NotImplementedException();
+            return DateTime.Now;
         }
     }
 }

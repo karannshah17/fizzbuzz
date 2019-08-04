@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="BusinessClasses\DateProvider.cs" />
     <Compile Include="BusinessClasses\DefaultModuloCheck.cs" />
+    <Compile Include="BusinessClasses\NumberModuloByFifteenCheck.cs" />
+    <Compile Include="BusinessClasses\NumberModuloByFiveCheck.cs" />
+    <Compile Include="BusinessClasses\NumberModuloByThreeCheck.cs" />
     <Compile Include="Core\IDateTimeProvider.cs" />
     <Compile Include="Core\INumberModuloCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

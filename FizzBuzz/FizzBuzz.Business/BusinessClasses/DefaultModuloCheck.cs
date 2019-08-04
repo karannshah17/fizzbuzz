@@ -11,7 +11,7 @@ namespace FizzBuzz.Business.BusinessClasses
     {
         public string OutputString(int number)
         {
-            throw new NotImplementedException();
+            return number.ToString();
         }
     }
 }
