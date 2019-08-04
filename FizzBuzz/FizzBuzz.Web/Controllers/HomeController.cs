@@ -1,4 +1,5 @@
-﻿using FizzBuzz.Web.Repository;
+﻿using FizzBuzz.Web.Models;
+using FizzBuzz.Web.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,21 +21,13 @@ namespace FizzBuzz.Web.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            ViewBag.message = "Welcome to the Fizz Buzz Logic.Please enter your Number!";
+            return View(new NumberViewModel());
         }
-
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(NumberViewModel model, int? page)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return null;
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
-    }
 }
