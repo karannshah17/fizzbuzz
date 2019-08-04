@@ -6,49 +6,29 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FizzBuzz.Web;
 using FizzBuzz.Web.Controllers;
+using NUnit.Framework;
+using FizzBuzz.Web.Repository;
+using Moq;
 
 namespace FizzBuzz.Web.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
-        public void Index()
+        private Moq.Mock<IOutputStringService> mockService;
+        [OneTimeSetUp]
+        public void Init()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            mockService = new Mock<IOutputStringService>();
+        }
+        [Test]
+        public void Index_Welcome_message_check()
+        {
 
-            // Act
+            HomeController controller = new HomeController(mockService.Object);
             ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [TestMethod]
-        public void About()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }
-
-        [TestMethod]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            NUnit.Framework.Assert.AreEqual("Welcome to the Fizz Buzz Logic.Please enter your Number!", result.ViewBag.Message);
+            NUnit.Framework.Assert.IsNotNull(result);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FizzBuzz.Web.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,15 @@ namespace FizzBuzz.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IOutputStringService _outputStringService;
+        // private FizzBuzzHandler _fizzBuzzHandler = null;
+
+        public HomeController(IOutputStringService outputStringService)
+        {
+            _outputStringService = outputStringService;
+
+
+        }
         public ActionResult Index()
         {
             return View();
