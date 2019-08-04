@@ -18,7 +18,25 @@ namespace FizzBuzz.Web.Repository
         }
         public List<string> getNumber(int number)
         {
-            throw new NotImplementedException();
+            List<string> lststr = new List<string>();
+            for (int i = 1; i < number; i++)
+            {
+                var strNumber = string.Empty;
+
+                foreach (var numberModuloCheck in _NumberModuloCheckProviders)
+                {
+
+                    var strData = numberModuloCheck.OutputString(i);
+                    if (strData != string.Empty)
+                    {
+                        strNumber = strData;
+                        break;
+                    }
+
+                }
+                lststr.Add(strNumber);
+            }
+            return lststr;
         }
     }
 }
