@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessClasses\DateProvider.cs" />
+    <Compile Include="BusinessClasses\DefaultModuloCheck.cs" />
+    <Compile Include="Core\IDateTimeProvider.cs" />
+    <Compile Include="Core\INumberModuloCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
