@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Repositroy\OutputStringServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -116,6 +117,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FizzBuzz.Business\FizzBuzz.Business.csproj">
+      <Project>{A0738524-6EBE-484C-93B2-C887C5769AFB}</Project>
+      <Name>FizzBuzz.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FizzBuzz.Web\FizzBuzz.Web.csproj">
       <Project>{6EBBFB5F-E3F1-4B4A-86BA-0DF47BD90EAD}</Project>
       <Name>FizzBuzz.Web</Name>
