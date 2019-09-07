@@ -1,4 +1,5 @@
-﻿using FizzBuzz.Business.Core;
+﻿
+using FizzBuzz.Business.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz.Business.BusinessClasses
 {
-    public class DateProvider : IDateTimeProvider
+    public class DefaultModuloCheck : INumberModuloCheck
     {
-        public DateTime GetNow()
+        public string OutputStringBasedOnRule(int number)
         {
-            return DateTime.Now;
+            return number.ToString();
         }
     }
 }

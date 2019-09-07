@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+﻿// <copyright file="RouteConfig.cs" company="Fizz Buzz">
+// Copyright (c) Fizz Buzz. All rights reserved.
+// </copyright>
 
 namespace FizzBuzz.Web
 {
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
@@ -16,7 +16,7 @@ namespace FizzBuzz.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "FizzBuzz", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz.Business.Core
 {
-    public interface INumberModuloCheck
+   public interface IExceptionalDayCheck
     {
-        string OutputString(int number);
+        Boolean IsExceptionalDayCheck();
+
+        
     }
 }

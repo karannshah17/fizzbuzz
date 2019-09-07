@@ -1,0 +1,24 @@
+﻿@model FizzBuzz.Web.Models.NumberViewModel
+@using FizzBuzz.Web.CustomHTMLHelper;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "FizzBuzz ";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @foreach (var number in Model.RuleBasedOutputLists)
+        {
+            @Html.DisplayCustomFizzBuzz(number);
+            <br />
+        }
+
+    </div>
+</div>
+<br />
+
+@Html.PagedListPager(Model.RuleBasedOutputLists, page => Url.Action("DisplayOutput",
+    new { value = @Model.UserNumber, page }))
+
+<link href="~/Content/fizzbuzz.css" rel="stylesheet" />

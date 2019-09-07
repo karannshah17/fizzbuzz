@@ -14,32 +14,32 @@ using FizzBuzz.Web.Models;
 namespace FizzBuzz.Web.Tests.Controllers
 {
     [TestFixture]
-    public class HomeControllerTest
+    public class FizzBuzzControllerTest
     {
-        private Moq.Mock<IOutputStringService> mockService;
+        private Moq.Mock<IMessageService> mockService;
         [OneTimeSetUp]
         public void Init()
         {
-            mockService = new Mock<IOutputStringService>();
+            mockService = new Mock<IMessageService>();
         }
         [Test]
         public void Index_Welcome_message_check()
         {
 
-            HomeController controller = new HomeController(mockService.Object);
+            FizzBuzzController controller = new FizzBuzzController(mockService.Object);
             ViewResult result = controller.Index() as ViewResult;
             NUnit.Framework.Assert.AreEqual("Welcome to the Fizz Buzz Logic.Please enter your Number!", result.ViewBag.Message);
             NUnit.Framework.Assert.IsNotNull(result);
         }
         [Test]
-        public void Home_Controller_to_return_Numbers()
+        public void FizzBuzz_Controller_to_return_String()
         {
             var model = new NumberViewModel();
             model.UserNumber = 3;
-            List<string> lststring = new List<string> { "1", "2" };
-            mockService.Setup(x => x.getNumber(model.UserNumber)).Returns(lststring);
-            HomeController homeController = new HomeController(mockService.Object);
-            var result = homeController.Index(model, null) as ViewResult;
+            IList<string> lststring = new List<string> { "1", "2" };
+            mockService.Setup(x => x.GetRuleBasedStringLists(model.UserNumber)).Returns(lststring);
+            FizzBuzzController fizzBuzzController = new FizzBuzzController(mockService.Object);
+            var result = fizzBuzzController.Index(model, null) as ViewResult;
             var actual = (NumberViewModel)result.Model;
         }
     }

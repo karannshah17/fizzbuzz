@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessClasses\DateProvider.cs" />
-    <Compile Include="BusinessClasses\DefaultModuloCheck.cs" />
-    <Compile Include="BusinessClasses\NumberModuloByFifteenCheck.cs" />
-    <Compile Include="BusinessClasses\NumberModuloByFiveCheck.cs" />
-    <Compile Include="BusinessClasses\NumberModuloByThreeCheck.cs" />
-    <Compile Include="Core\IDateTimeProvider.cs" />
-    <Compile Include="Core\INumberModuloCheck.cs" />
+    <Compile Include="Implementations\ExceptionalDayCheck.cs" />
+    <Compile Include="Implementations\DefaultModuloCheck.cs" />
+    <Compile Include="Implementations\NumberModuloByFifteenCheck.cs" />
+    <Compile Include="Implementations\NumberModuloByFiveCheck.cs" />
+    <Compile Include="Implementations\NumberModuloByThreeCheck.cs" />
+    <Compile Include="Abstract\IExceptionalDayCheck.cs" />
+    <Compile Include="Abstract\INumberModuloCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

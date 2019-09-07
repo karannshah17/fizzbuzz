@@ -1,8 +1,12 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿// <copyright file="BundleConfig.cs" company="Fizz Buzz">
+// Copyright (c) Fizz Buzz. All rights reserved.
+// </copyright>
 
 namespace FizzBuzz.Web
 {
+    using System.Web;
+    using System.Web.Optimization;
+
     public class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862

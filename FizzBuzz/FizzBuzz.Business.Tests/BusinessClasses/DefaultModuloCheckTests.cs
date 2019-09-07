@@ -11,12 +11,24 @@ namespace FizzBuzz.Business.Tests.BusinessClasses
 {
     class DefaultModuloCheckTests
     {
+        INumberModuloCheck defaultModuloCheck;
+        [SetUp]
+        public void TestInit()
+        {
+            defaultModuloCheck = new DefaultModuloCheck();
+
+        }
+        
         [Test]
         public void DefaultModuloConstructor_Return_Type_Test()
         {
-            INumberModuloCheck NumberString = new DefaultModuloCheck();
-            Assert.IsTrue(null != NumberString, "Construction failed");
-            Assert.IsTrue(typeof(string) == NumberString.OutputString(5).GetType(), "Number String class should return string type");
+          
+            string expected = "1";
+            
+            string actual = defaultModuloCheck.OutputStringBasedOnRule(1);
+            Assert.AreEqual(actual, expected);
+            //    Assert.IsTrue(null != NumberString, "Construction failed");
+            //    Assert.IsTrue(typeof(string) == NumberString.OutputStringBasedOnRule(5).GetType(), "Number String class should return string type");
         }
 
     }

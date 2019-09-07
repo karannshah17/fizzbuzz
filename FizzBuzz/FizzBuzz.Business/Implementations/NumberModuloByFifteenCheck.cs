@@ -9,20 +9,20 @@ namespace FizzBuzz.Business.BusinessClasses
 {
     public class NumberModuloByFifteenCheck : INumberModuloCheck
     {
-        IDateTimeProvider _dateTimeProvider;
+        IExceptionalDayCheck _exceptionalDayCheck;
 
-        public NumberModuloByFifteenCheck(IDateTimeProvider dateTimeProvider)
+        public NumberModuloByFifteenCheck(IExceptionalDayCheck exceptionalDayCheck)
         {
-            _dateTimeProvider = dateTimeProvider;
+            _exceptionalDayCheck = exceptionalDayCheck;
         }
-        public string OutputString(int number)
+
+
+        public string OutputStringBasedOnRule(int number)
         {
             if (number % 5 == 0 && number % 3 == 0)
             {
-                return _dateTimeProvider.GetNow().DayOfWeek == DayOfWeek.Wednesday ? "WizzWuzz" : "FizzBuzz";
-
+                return _exceptionalDayCheck.IsExceptionalDayCheck() ? "WizzWuzz" : "FizzBuzz";
             }
-
             return string.Empty;
         }
     }

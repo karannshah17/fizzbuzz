@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBuzz.Web.Repository
+namespace FizzBuzz.Business.Core
 {
-    public interface IOutputStringService
+    public interface INumberModuloCheck
     {
-        List<string> getNumber(int number);
+        string OutputStringBasedOnRule(int number);
+
+       
     }
 }

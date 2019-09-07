@@ -14,7 +14,7 @@ namespace FizzBuzz.Business.Tests.BusinessClasses
         [Test]
         public void DateProviderTest()
         {
-            IDateTimeProvider dateTimeProvider = new DateProvider();
+            IExceptionalDayCheck dateTimeProvider = new DateProvider();
 
             Assert.IsTrue(null != dateTimeProvider, "Construction failed");
             Assert.IsTrue(DateTime.Now.Date == dateTimeProvider.GetNow().Date, "Datetime should return todays date");

@@ -32,8 +32,8 @@ namespace FizzBuzz.Web.Tests.Repositroy
         [TestCase(6, 5)]
         public void Check_Output_String_Service_Count(int input, int expectedCount)
         {
-            IOutputStringService outputStringService = new OutputStringService(_NumberModuloCheckProviders);
-            int ActualCount = outputStringService.getNumber(input).Count;
+            IMessageService outputStringService = new MessageService(_NumberModuloCheckProviders);
+            int ActualCount = outputStringService.GetRuleBasedStringLists(input).Count;
             Assert.AreEqual(expectedCount, ActualCount);
         }
     }
