@@ -31,6 +31,7 @@ namespace FizzBuzz.Web.Controllers
             this.ViewBag.message = "Welcome to the Fizz Buzz Logic.Please enter your Number!";
 
             return this.View(new NumberViewModel());
+
         }
 
         [HttpPost]
