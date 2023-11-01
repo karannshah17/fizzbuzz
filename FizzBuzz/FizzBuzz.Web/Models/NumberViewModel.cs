@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using PagedList;
     //This changed has been done just to test
+    //Subsequent Chnae into QA 
     public class NumberViewModel
     {
         [Range(1, 1000)]
