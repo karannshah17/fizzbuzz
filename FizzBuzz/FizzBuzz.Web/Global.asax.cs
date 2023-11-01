@@ -13,6 +13,7 @@ namespace FizzBuzz.Web
         //Feature test
         protected void Application_Start()
         {
+            //SAP
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
