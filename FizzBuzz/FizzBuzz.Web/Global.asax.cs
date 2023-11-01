@@ -10,6 +10,7 @@ namespace FizzBuzz.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        //Feature test
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
