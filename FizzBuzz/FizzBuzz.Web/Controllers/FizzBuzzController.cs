@@ -33,7 +33,7 @@ namespace FizzBuzz.Web.Controllers
             return this.View(new NumberViewModel());
 
         }
-        //First Change that must be removed after sometime
+
         [HttpPost]
         public ActionResult Index(NumberViewModel model, int? page)
         {
