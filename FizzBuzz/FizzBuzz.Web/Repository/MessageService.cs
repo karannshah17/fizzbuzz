@@ -9,7 +9,7 @@ namespace FizzBuzz.Web.Repository
     using System.Linq;
     using System.Web;
     using FizzBuzz.Business.Core;
-    //This was created for Biju
+
     public class MessageService : IMessageService
     {
         private readonly INumberModuloCheck[] numberModuloCheckProviders;
