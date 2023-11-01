@@ -4,7 +4,7 @@
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using PagedList;
-
+    //This changed has been done just to test
     public class NumberViewModel
     {
         [Range(1, 1000)]
